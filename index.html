@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="noindex" />
+  <title>Canvas Test</title>
+</head>
+ 
+<body>
+<style>
+#example{margin: 100px 55px;}
+</style>
+ <canvas id='example'>Обновите браузер</canvas>
+
+  <script>
+	var example = document.getElementById("example");
+	var ctx = example.getContext('2d');
+	
+	example.width  = 240;
+	example.height = 240;
+	ctx.fillStyle  = '#fff';
+	ctx.strokeStyle = '#336699 ';
+	ctx.lineWidth = 2;
+	ctx.fillRect(0,0,200,200);
+	ctx.strokeRect(0,0,200,200);
+
+	for (var i=0; i<200; i++){
+		ctx.moveTo(40*i, 0);
+		ctx.lineTo(40*i, 300);
+		ctx.moveTo(0, 40*i);
+		ctx.lineTo(300, 40*i);
+	}
+	
+
+	ctx.fillStyle   = '#F63806';
+	ctx.strokeStyle = "#336699 ";
+
+	ctx.fill();
+	ctx.stroke();
+
+	ctx.clearRect(1,0,240,40);
+	ctx.clearRect(200,5,40,234);
+
+  </script>
+
+
+</body>
+</html>
